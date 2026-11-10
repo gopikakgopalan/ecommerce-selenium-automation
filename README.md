@@ -178,14 +178,33 @@ The framework generates HTML test execution reports and captures screenshots for
 - HTML reports: `reports/`
 - Failure screenshots: `screenshots/`
 
+## CI/CD Integration – GitHub Actions
+
+- The framework is integrated with GitHub Actions for automated test execution.
+
+- Automatically triggers test execution on pushes to the main branch and pull requests targeting main.
+
+- Uses GitHub-hosted Ubuntu runners.
+
+- Configures Python 3.13 and installs project dependencies.
+
+-  Selenium tests using headless Chrome.
+
+- Supports parallel execution using pytest-xdist with two workers.
+
+- Generates self-contained HTML test execution reports.
+
+- Uploads HTML reports and failure screenshots as GitHub Actions workflow artifacts.
+
 ## Future Enhancements
 
-- Integrate the framework with GitHub Actions for automated CI/CD execution.
-- Publish test execution reports as GitHub Actions artifacts.
-- Expand coverage to product selection, cart and checkout workflows.
-- Add structured logging.
-- Integrate API testing with the UI automation framework.
+- Expand test coverage to product selection, shopping cart and checkout workflows.
 
+- Implement structured logging for improved debugging and test execution traceability.
+
+- Integrate API testing with the existing UI automation framework.
+
+-Extend CI/CD execution to include cross-browser testing with Chrome and Firefox.
 ## Learning Objectives
 
 This project is part of my hands-on learning and portfolio development in Software Development Engineer in Test (SDET).
