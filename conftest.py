@@ -6,6 +6,9 @@ import re
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 from selenium.webdriver.firefox.options import Options as FirefoxOptions
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 def pytest_addoption(parser):
     parser.addoption(
@@ -68,7 +71,9 @@ def driver(request):
         driver.maximize_window()
 
     driver.get("https://www.saucedemo.com/")
-
+    WebDriverWait(driver, 20).until(
+        EC.visibility_of_element_located((By.ID, "user-name"))
+    )
     yield driver
 
     driver.quit()
